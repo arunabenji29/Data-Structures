@@ -10,7 +10,7 @@ class LRUCache:
   order, as well as a storage dict that provides fast access
   to every node stored in the cache.
   """
-  def __init__(self, limit=3):
+  def __init__(self, limit=10):
     self.max = limit
     self.dll = DoublyLinkedList()
     self.dict = {}
@@ -61,6 +61,7 @@ class LRUCache:
 
       else:
         print('set:for max length: if no key exists')
+        del self.dict[self.dll.head.value]
         self.dict[key] = value
         self.dll.remove_from_head()
         self.dll.add_to_tail(key)
@@ -86,17 +87,15 @@ class LRUCache:
     print(f'set: dict is {self.dict}')
       
 
-lru = LRUCache()
-print(lru.get('item1'))
-
-lru.set('item1',1)
-lru.set('item2',2)
-lru.set('item3',3)
-print(lru.get('item1'))
-print(lru.get('item2'))
-print(lru.get('item3'))    
-lru.set('item4',4)
+# lru = LRUCache()
 # print(lru.get('item1'))
-# print(lru.get('item3'))  
-print(lru.get('item4'))
-print(lru.get('item1'))
+
+# lru.set('item1',1)
+# lru.set('item2',2)
+# lru.set('item3',3)
+# print(lru.get('item1'))
+# print(lru.get('item2'))
+# print(lru.get('item3'))    
+# lru.set('item4',4) 
+# print(lru.get('item4'))
+# print(lru.get('item1'))
