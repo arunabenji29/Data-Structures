@@ -27,7 +27,7 @@ class ListNode:
   """Rearranges this ListNode's previous and next pointers
   accordingly, effectively deleting this ListNode."""
   def delete(self):
-    print('ListNode delete')
+    # print('ListNode delete')
 
     if self.prev:
       self.prev.next = self.next
@@ -133,7 +133,7 @@ class DoublyLinkedList:
   """Removes a node from the list and handles cases where
   the node was the head or the tail"""
   def delete(self, node):
-    print('DoublyLinkedList delete')
+    # print('DoublyLinkedList delete')
     self.length -= 1
     if not self.head and not self.tail:
       return

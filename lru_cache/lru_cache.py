@@ -28,7 +28,7 @@ class LRUCache:
 
       while current:
         if current.value == key:
-          print(f'get: If i have the same key')
+          # print(f'get: If i have the same key')
           self.dll.move_to_end(current)
           return self.dict[key]
         current = self.dll.head.next
@@ -53,14 +53,14 @@ class LRUCache:
 
         while current:
           if current.value == key:
-            print(f'set:for max length: If i have the same key')
+            # print(f'set:for max length: If i have the same key')
             self.dict[key] = value
             self.dll.move_to_end(current)
             break
           current = self.dll.head.next
 
       else:
-        print('set:for max length: if no key exists')
+        # print('set:for max length: if no key exists')
         del self.dict[self.dll.head.value]
         self.dict[key] = value
         self.dll.remove_from_head()
@@ -73,18 +73,18 @@ class LRUCache:
 
         while current:
           if current.value == key:
-            print(f'set: If i have the same key')
+            # print(f'set: If i have the same key')
             self.dict[key] = value
             self.dll.move_to_end(current)
             break
           current = self.dll.head.next
 
       else:
-        print('set: if no key exists')
+        # print('set: if no key exists')
         self.dict[key] = value
         self.dll.add_to_tail(key)
         # print(f'set: head is {self.dll.head.value}')
-    print(f'set: dict is {self.dict}')
+    # print(f'set: dict is {self.dict}')
       
 
 # lru = LRUCache()
